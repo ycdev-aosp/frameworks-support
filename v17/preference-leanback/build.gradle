@@ -30,7 +30,8 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 'current'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     sourceSets {
         main.manifest.srcFile 'AndroidManifest.xml'

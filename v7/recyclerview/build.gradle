@@ -7,12 +7,12 @@ dependencies {
     compile project(':support-annotations')
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
-    testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit:' + rootProject.ext.junitVersion
 }
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "19.1.0"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 7
@@ -76,38 +76,4 @@ android.libraryVariants.all { variant ->
 
     artifacts.add('archives', javadocJarTask);
     artifacts.add('archives', sourcesJarTask);
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: uri(rootProject.ext.supportRepoOut)) {
-            }
-
-            pom.project {
-                name 'Android Support RecyclerView v7'
-                description "Android Support RecyclerView v7"
-                url 'http://developer.android.com/tools/extras/support-library.html'
-                inceptionYear '2011'
-
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'repo'
-                    }
-                }
-
-                scm {
-                    url "http://source.android.com"
-                    connection "scm:git:https://android.googlesource.com/platform/frameworks/support"
-                }
-                developers {
-                    developer {
-                        name 'The Android Open Source Project'
-                    }
-                }
-            }
-        }
-    }
 }

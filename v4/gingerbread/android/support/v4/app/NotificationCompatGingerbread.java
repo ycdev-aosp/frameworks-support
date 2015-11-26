@@ -24,7 +24,7 @@ class NotificationCompatGingerbread {
     public static Notification add(Notification notification, Context context,
             CharSequence contentTitle, CharSequence contentText, PendingIntent contentIntent,
             PendingIntent fullScreenIntent) {
-        notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+//        notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
         notification.fullScreenIntent = fullScreenIntent;
         return notification;
     }

@@ -33,5 +33,5 @@ oneway interface IMediaBrowserServiceCompat {
 
     void addSubscription(String uri, IMediaBrowserServiceCompatCallbacks callbacks);
     void removeSubscription(String uri, IMediaBrowserServiceCompatCallbacks callbacks);
-    void getMediaItem(String uri, in ResultReceiver cb);
+    void getMediaItem(String uri, in android.support.v4.os.ResultReceiver cb);
 }
